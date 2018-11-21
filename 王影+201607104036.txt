@@ -1,0 +1,19 @@
+ sudo mysql -u root -p
+ create database taobaogouwuche_mysql charset=utf8£»
+use taobaogouwuche_mysql;
+create table list(
+    -> id int auto_increment primary key,
+    -> likes varchar(30),
+    -> discounts varchar(40),
+    -> wishes varchar(30));
+
+desc list;
+insert into list(id,likes,discounts,wishes)
+    -> values(1,"shoes","50%","hongbao");
+select * from list;
+insert into list(id,likes,discounts,wishes) values(2,"books","85%","youhuiquan"),(3,"pants","90%","taojinbi");
+select * from list; 
+update list set likes="cup" where likes="pants";
+select * from list;
+delete from list where wishes="taojinbi";
+select * from list;
